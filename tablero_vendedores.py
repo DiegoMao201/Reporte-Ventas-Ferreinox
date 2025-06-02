@@ -12,7 +12,6 @@ file_path = "resumen_vendedores.xlsx"
 
 try:
     df = pd.read_excel(file_path)
-    st.success(f"Archivo '{file_path}' cargado exitosamente desde el repositorio.")
 except FileNotFoundError:
     st.error(f"¡Error! El archivo '{file_path}' no se encontró en el repositorio. Asegúrate de que esté subido en la misma carpeta que tu script de Streamlit en GitHub.")
     st.stop()
@@ -165,3 +164,6 @@ if 'marquilla' in dff.columns and not dff.empty and not dff['nomvendedor'].isnul
         st.info("No hay datos significativos de marquillas para mostrar en el gráfico.")
 else:
     st.warning("No se pueden generar los gráficos de marquilla. Verifica que la columna 'marquilla' y 'nomvendedor' existan y contengan datos válidos después del filtro.")
+
+
+
